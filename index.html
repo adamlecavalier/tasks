@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Attribution des tâches</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Répartition des tâches du soir</h1>
+<h2>Employés (un par ligne)</h2>
+<textarea id="employes" placeholder="Exemple: 
+Adam
+Rose
+Émile" ></textarea>
+
+<h2>Tâches (une par ligne)</h2>
+<textarea id="taches" placeholder="Cuisine/Toilette
+Poubelle"></textarea>
+
+<button onclick="assignTasks()">Tirer au sort</button>
+<h1 id="repartitions">Voici les répartitions</h1>
+<ul id="results"></ul>
+</body>
+</html>
