@@ -21,9 +21,30 @@ function assignTasks() {
   const results = document.getElementById("results");
   results.innerHTML = "";
 
-  for (let i = 0; i < Math.min(employes.length, taches.length); i++) {
+  const errorDiv = document.getElementById("error-message");
+  if (employes.length === 0 || taches.length === 0) {
+    errorDiv.textContent = "Veuillez entrer au moins un employé et une tâche.";
+    return;
+  } else {
+    errorDiv.textContent = "";
+  }
+
+  let tacheIndex = 0;
+  for (let i = 0; i < employes.length; i++) {
     const li = document.createElement("li");
-    li.textContent = `${employes[i]} doit faire ${taches[i]} ce soir.`;
+    let tachesAssignees = [];
+    let nbTaches = Math.floor(taches.length / employes.length);
+    if (i < taches.length % employes.length) nbTaches += 1;
+    for (let j = 0; j < nbTaches && tacheIndex < taches.length; j++) {
+      tachesAssignees.push(taches[tacheIndex]);
+      tacheIndex++;
+    }
+    if (tachesAssignees.length > 0) {
+      li.textContent = `${employes[i]} doit faire ${tachesAssignees.join(", ")} ce soir.`;
+    } else {
+      li.textContent = `${employes[i]} ne fait rien ce soir.`;
+      li.classList.add("rien");
+    }
     results.appendChild(li);
   }
 }

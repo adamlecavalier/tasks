@@ -10,16 +10,19 @@
 <h1>Répartition des tâches du soir</h1>
 <h2>Employés (un par ligne)</h2>
 <textarea id="employes" placeholder="Exemple: 
-Adam
-Rose
+Jean
+Mario
 Émile" ></textarea>
 
 <h2>Tâches (une par ligne)</h2>
-<textarea id="taches" placeholder="Cuisine/Toilette
-Poubelle"></textarea>
+<textarea id="taches" placeholder="Exemple:
+Cuisine/Toilette
+Poubelle
+Balai"></textarea>
 
 <button onclick="assignTasks()">Tirer au sort</button>
 <h1 id="repartitions">Voici les répartitions</h1>
+<div id="error-message"></div>
 <ul id="results"></ul>
 </body>
 </html>

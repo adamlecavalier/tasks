@@ -29,6 +29,17 @@ li {
     border-left: 4px solid #4CAF50;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+
+li.rien {
+    border-left: 4px solid rgb(0, 225, 255);
+}
+
+#error-message {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
 h1, h2 {
     color: #333;
 }
